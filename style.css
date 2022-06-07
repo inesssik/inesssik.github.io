@@ -32,19 +32,24 @@ p{
 .input_header{
     font-size: 30px;
     font-weight: bold;
+    margin-top: 3vh;
 }
 
 #countOfPlayers{
-    width: 30%;
+    width: 100%;
     text-align: center;
 }
+
+
 
 .roles{
     width: 33.333%;
     text-align: center;
+    margin-top: 2vh;
 }
 
 .role_header{
+    margin-bottom: 2vh;
     font-size: 50px;
     font-weight: bolder;
     text-transform: uppercase;
@@ -63,6 +68,7 @@ p{
     margin: 10px;
     padding: 15px 45px;
     width: 50%;
+    height: 100px;
     text-align: center;
     align-items: center;
     text-transform: uppercase;
@@ -73,7 +79,14 @@ p{
     border-radius: 10px;
     display: block;
     cursor: pointer;
-    
+}
+
+.reset_btn{
+    background-image: linear-gradient(to right, #16222A 0%, #3A6073 51%, #16222A 100%);
+    font-size: 22px;
+    height: 80px;
+    width: 160px;
+    margin-top: 50px;
 }
 
 .btn-grad:hover {
@@ -115,19 +128,29 @@ p{
 
 .container{
     display: flex;
-    background-color: #ffffff;
     border-radius: 45px;
     box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+    justify-content: center;
+    background-color: #000000;
+    width: 40%;
+    margin-top: 4vh;
 }
+
+
 
 input[type="number"]{
     -moz-appearance: textfield;
     text-align: center;
     font-size: 40px;
     border: none;
-    background-color: #ffffff;
-    color: #202030;
+    color: #ffffff;
+    background-color: #000000;
 }
+
+input[type="number"]:focus-visible{
+    outline: 0;
+}
+    
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button{
@@ -146,9 +169,12 @@ button{
 #decrement{
     padding: 15px 5px 15px 25px;
     border-radius: 45px 0 0 45px;
+    background-color: #000000;
+
 }
 
 #increment{
     padding: 15px 25px 15px 5px;
     border-radius: 0 45px 45px 0;
+    background-color: #000000;
 }

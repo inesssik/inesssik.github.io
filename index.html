@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -14,17 +15,19 @@
     <div class="functional">
 
         <div class="inputs">
-            <div class="input_header">Type count of players</div>
+            <div class="input_header">COUNT OF PLAYERS</div>
             <div class="container">
                 <button id="decrement" onclick="stepper(this)"> - </button>
-                <input type="number" min="0" max="100" step="1" value="20" id="countOfPlayers" readonly>
+                <input type="number" min="0" step="1" id="countOfPlayers">
                 <button id="increment" onclick="stepper(this)"> + </button>
-            </div></div>
+            </div>
+            <button class="btn-grad reset_btn" onclick="resetRole()">RESET ROLES</button>
+        </div>
 
         <div class="roles">
             <div class="role_header">All roles</div>
-            <p class="role_item">Mafia</p>
-            <p class="role_item">Don</p>
+            <div class="role_list">
+            </div>
         </div>
 
         <div class="btns">
