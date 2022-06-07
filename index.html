@@ -22,8 +22,14 @@
                 <button id="increment" onclick="stepper(this)"> + </button>
             </div>
             <button class="btn-grad reset_btn" onclick="resetRole()">RESET ROLES</button>
-        
-            <div id="timer">60</div>
+            <div id="timer">
+                <div id="timer_time"></div>
+                <button class="timer_start btn-grad">Start new 60</button>
+                <div class="timer_panel">
+                    <button id="timer_pause" class="btn-grad">Pause</button>
+                    <button id="timer_resume" class="btn-grad">Resume</button>
+               </div>
+            </div>
         </div>
 
         <div class="roles">

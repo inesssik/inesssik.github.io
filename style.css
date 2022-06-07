@@ -79,6 +79,8 @@ p{
     border-radius: 10px;
     display: block;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
 }
 
 .reset_btn{
@@ -116,7 +118,7 @@ p{
 .resultBtn{
     display: flex;
     justify-content: center;
-    margin-top: 200px;
+    margin-top: 5%;
 }
 
 #viewResult{
@@ -177,4 +179,33 @@ button{
     padding: 15px 25px 15px 5px;
     border-radius: 0 45px 45px 0;
     background-color: #000000;
+}
+
+.timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.timer_start{
+    background-color: grey;
+}
+
+.timer_panel{
+    display: flex;
+    justify-content: center;
+}
+
+#timer_time{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#timer_pause{
+    background-color: gray;
+}
+
+
+#timer_resume{
+    background-color: gray;
 }

@@ -3,6 +3,11 @@ let roles = []
 let arrayOfNumbers = []
 let $role_list = document.querySelector('.role_list')
 let second = 1000
+let $timer = document.getElementById('timer')
+let $timerTime = document.getElementById('timer_time')
+let $pause = document.getElementById('timer_pause')
+let $resume = document.getElementById('timer_resume')
+
 
 function addMaf(){
     roles.push('Mafia')
@@ -100,17 +105,29 @@ function stepper(btn){
     $role_list.innerHTML = ""
 }
 
-let timerTime = 60
+$timerTime.innerText = 60
 
-function startNewTimer(){
-    let secondInterval
-    setTimeout(function(){
-        secondInterval = setInterval(() => {
-        console.log(timerTime -= 1)
-    }, second)}, 5 * second)
+function startNewTimer(time){
+    $pause.addEventListener('click', () => {
+        clearInterval(forSecondInterval)
+    })
+    
+    $resume.addEventListener('click', () => {
+        startNewTimer(time)
+    }) 
 
-    clearInterval(secondInterval)
+    time++
+    let forSecondInterval = setInterval(() => {
+        $timerTime.innerText = time -= 1
+        if(time <= 0){
+            clearInterval(forSecondInterval)
+        }
+    
+    }, 1 * second)
 }
+
+
+
 
 
 
