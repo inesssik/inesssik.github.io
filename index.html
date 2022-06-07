@@ -14,15 +14,17 @@
     <div class="functional">
 
         <div class="inputs">
-            <input type="number" id="countOfPlayers" placeholder="Count Of Player">
-        </div>
+            <div class="input_header">Type count of players</div>
+            <div class="container">
+                <button id="decrement" onclick="stepper(this)"> - </button>
+                <input type="number" min="0" max="100" step="1" value="20" id="countOfPlayers" readonly>
+                <button id="increment" onclick="stepper(this)"> + </button>
+            </div></div>
 
         <div class="roles">
-            <div class="header">All roles</div>
-            <p>mafia</p>
-            <p>mafia</p>
-            <p>mafia</p>
-            <p>mafia</p>
+            <div class="role_header">All roles</div>
+            <p class="role_item">Mafia</p>
+            <p class="role_item">Don</p>
         </div>
 
         <div class="btns">
