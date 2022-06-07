@@ -2,6 +2,7 @@ let $button = document.getElementById('viewResult')
 let roles = []
 let arrayOfNumbers = []
 let $role_list = document.querySelector('.role_list')
+let second = 1000
 
 function addMaf(){
     roles.push('Mafia')
@@ -72,7 +73,6 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min)
 }
 
-
 const myInput = document.getElementById("countOfPlayers");
 $(myInput).val(12)
 function stepper(btn){
@@ -99,5 +99,18 @@ function stepper(btn){
     roles = []
     $role_list.innerHTML = ""
 }
+
+let timerTime = 60
+
+function startNewTimer(){
+    let secondInterval
+    setTimeout(function(){
+        secondInterval = setInterval(() => {
+        console.log(timerTime -= 1)
+    }, second)}, 5 * second)
+
+    clearInterval(secondInterval)
+}
+
 
 
