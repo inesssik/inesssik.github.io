@@ -17,6 +17,15 @@ p{
     padding: 0;
 }
 
+button{
+  color: #3264fe;
+  color: #fff;
+  background-color: #fff;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+}
+
 .functional{
     display: flex;
 }
@@ -126,8 +135,14 @@ p{
 
 .footer{
     display: flex;
-    justify-content: space-around;
-    margin-top: 5%;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.footer_item{
+  display: flex;
+  justify-content: center;
+  width: 33.333%;
 }
 
 #viewResult{
@@ -135,13 +150,22 @@ p{
     height: 55px;
 }
 
+.decrBtn:active{
+  transform: translateY(2px);
+}
+
+.incrBtn::target-text:active{
+  transform: translateY(2px);
+}
 
 .container{
     display: flex;
     border-radius: 45px;
-    box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+    box-shadow: 
+        inset 0px 11px 8px -10px #000000,
+        inset 0px -11px 8px -10px #000000;  
     justify-content: center;
-    background-color: #000000;
+    background-color: #0040ff;
     width: 40%;
     margin-top: 4vh;
 }
@@ -151,10 +175,15 @@ p{
 input[type="number"]{
     -moz-appearance: textfield;
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
     border: none;
     color: #ffffff;
-    background-color: #000000;
+    background-color: #0040ff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    box-shadow: 
+    inset 0px 11px 8px -10px rgb(0, 0, 0),
+    inset 0px -11px 8px -10px rgb(0, 0, 0); 
 }
 
 input[type="number"]:focus-visible{
@@ -168,25 +197,49 @@ input::-webkit-inner-spin-button{
     margin: 0;
 }
 
-button{
-    color: #3264fe;
-    background-color: #ffffff;
-    border: none;
-    font-size: 40px;
-    cursor: pointer;
+
+
+
+.container button{
+  color: #3264fe;
+  color: #fff;
+  background-color: #fff;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
 }
 
+
 #decrement{
-    padding: 15px 5px 15px 25px;
+    padding: 10px 5px 15px 25px;
     border-radius: 45px 0 0 45px;
-    background-color: #000000;
+    background-color: #0040ff;
+    box-shadow: 
+        inset 0px 11px 8px -10px #000000,
+        inset 0px -11px 8px -10px #000000; 
 
 }
 
 #increment{
     padding: 15px 25px 15px 5px;
     border-radius: 0 45px 45px 0;
-    background-color: #000000;
+    background-color: #0040ff;
+    box-shadow: 
+        inset 0px 11px 8px -10px #000000,
+        inset 0px -11px 8px -10px #000000; 
+        
+}
+
+.incrBtn{
+  font-size: 40px;
+  transition: 0.2s;
+  display: flex;
+}
+
+.decrBtn{
+  font-size: 40px;
+  transition: 0.2s;
+  display: flex;
 }
 
 .timer{
@@ -198,7 +251,7 @@ button{
 .timer_new60{
     background-color: grey;
     display: inline-flex;
-    width: 275px;
+    font-size: 30px;
 }
 
 .timer_panel{
@@ -234,6 +287,8 @@ button{
 
 .timer_panel{
     background-color: #fff;
+    border-radius: 40px;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
 
 }
 
@@ -241,11 +296,37 @@ button{
     width: 150px;
     height: 150px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .displayNone{
     display: none;
 }
+
+
+.timer_panel_plusMinus{
+    display: flex;
+    padding: 30px;
+    padding-top: 0px;
+}
+
+.timer_panel_plusMinus button{
+    width: 50%;
+    margin: 10px;
+}
+
+.timer_panel_new60{
+  margin: 0 20px 0 20px;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -480,3 +561,103 @@ button{
   transform: translateY(2px);
 }
 
+.button-30 {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.button-30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.input-container{
+	position:relative;
+	margin-bottom:25px;
+}
+.input-container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:#fff;	
+  pointer-events: none;
+	transition: all 0.5s ease-in-out;
+}
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:#fff;
+}
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #e74c3c;	
+}
+.btn{
+	color:#fff;
+	background-color:#e74c3c;
+	outline: none;
+    border: 0;
+    color: #fff;
+	padding:10px 20px;
+	text-transform:uppercase;
+	margin-top:50px;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+}
+.btn:after{
+	content:"";
+	position:absolute;
+	background:rgba(0,0,0,0.50);
+	top:0;
+	right:0;
+	width:100%;
+	height:100%;
+}
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+	top:-12px;
+	font-size:12px;
+	
+}

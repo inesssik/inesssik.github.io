@@ -9,6 +9,7 @@ let $resume = document.querySelector('.timer_resume')
 let $pause = document.querySelector('.timer_pause')
 let $timerStart = document.querySelector('.timer_start')
 let $plus30 = document.querySelector('.plus30')
+let $minus30 = document.querySelector('.minus30')
 
 function addMaf(){
     roles.push('Mafia')
@@ -145,13 +146,24 @@ let isFirst = true
 let forSecondInterval
 let changableTimeForTimer = 60
 
+$plus30.addEventListener('click', () => {
+    changableTimeForTimer += 30
+    $timerTime.innerText = changableTimeForTimer
+})
+
+$minus30.addEventListener('click', () => {
+    if(changableTimeForTimer > 30){
+        changableTimeForTimer -= 30
+        $timerTime.innerText = changableTimeForTimer
+    }
+})
+
 $('.timer_new60').click(() => {
     clearInterval(forSecondInterval)
     changableTimeForTimer = 60
     $timerTime.innerText = changableTimeForTimer
 
     $resume = document.querySelector('.timer_resume')
-    let $resumeToPause = document.querySelector(".resumeToPause")
     $pause = document.querySelector(".timer_pause")
     let $pauseToResume = document.querySelector('.pauseToResume')
 
@@ -167,6 +179,16 @@ $('.timer_new60').click(() => {
     }
 }) 
 
+$('#decrement').click(() => {
+    document.querySelector('.decrBtn').style.fontSize = '50px'
+    setTimeout(() => {document.querySelector('.decrBtn').style.fontSize = '40px'}, 100)
+})
+
+$('#increment').click(() => {
+    document.querySelector('.incrBtn').style.fontSize = '50px'
+    setTimeout(() => {document.querySelector('.incrBtn').style.fontSize = '40px'}, 100)
+})
+
 $resume.addEventListener('click', () => {
     imgAnim(false)
     startNewTimer(changableTimeForTimer)
@@ -181,6 +203,7 @@ function startNewTimer(time = 60){
     })
 
     forSecondInterval = setInterval(() => {
+        time = changableTimeForTimer
         $timerTime.innerText = time -= 1
         if(time <= 0){
             clearInterval(forSecondInterval)

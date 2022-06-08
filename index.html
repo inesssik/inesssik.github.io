@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Orbitron&display=swap" rel="stylesheet"><link href="style.css" rel="stylesheet">
-    <link rel="shortcut icon" href="mafiaIcon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="89sqd.png" type="image/x-icon">
     
     <title>Randomizer Mafia</title>
 </head>
@@ -18,9 +18,9 @@
         <div class="inputs">
             <div class="input_header">COUNT OF PLAYERS</div>
             <div class="container">
-                <button id="decrement" onclick="stepper(this)"> - </button>
+                <button id="decrement" onclick="stepper(this)"><a class="decrBtn"> - </a></button>
                 <input type="number" min="0" step="1" id="countOfPlayers">
-                <button id="increment" onclick="stepper(this)"> + </button>
+                <button id="increment" onclick="stepper(this)"><a class="incrBtn"> + </a></button>
             </div>
             <div id="timer">
                 <div id="timer_time"></div>
@@ -31,8 +31,12 @@
                         <img class="imgAnim resumeToPause displayNone" src="pauseTimerImg/resumeToPause.gif">
                         <img class="imgAnim pauseToResume displayNone" src="pauseTimerImg/pauseToResume.gif">
                     </div>
-                    <div class="timer_panel_start">
-                        <button class="timer_new60 btn-grad">New 60</button>
+                    <div class="timer_panel_new60">
+                        <button class="timer_new60 button-30">New</button>
+                    </div>
+                    <div class="timer_panel_plusMinus">
+                        <button class="minus30 button-30">-30s</button>
+                        <button class="plus30 button-30">+30s</button>
                     </div>
                 </div>
             </div>
@@ -41,9 +45,6 @@
         
 
         <div class="roles">
-
-            
-
             <div class="role_header">All roles</div>
             <div class="role_list"></div>
         </div>
@@ -61,14 +62,24 @@
     </div>
 
     <div class="footer">
-        <button class="button-29 reset_btn" onclick="resetRole()">RESET ROLES</button>
-        <button class="button-82-pushable" id="viewResult">
-            <span class="button-82-shadow"></span>
-            <span class="button-82-edge"></span>
-            <span class="button-82-front text">
-                Result
-            </span>
-        </button>
+        <div class="reset footer_item">
+            <button class="button-29 reset_btn" onclick="resetRole()">RESET ROLES</button>
+        </div>
+        <div class="result footer_item">
+            <button class="button-82-pushable" id="viewResult">
+                <span class="button-82-shadow"></span>
+                <span class="button-82-edge"></span>
+                <span class="button-82-front text">
+                    Result
+                </span>
+            </button>
+        </div>
+        <div class="customRole footer_item">
+            <div class="input-container">
+                <input type="text" required=""/>
+                <label>Custom Role</label>		
+            </div>  
+        </div>
     </div>
 </body>
 <script src="index.js"></script>
