@@ -6,7 +6,7 @@ let second = 1000
 let $timer = document.getElementById('timer')
 let $timerTime = document.getElementById('timer_time')
 let $resume = document.getElementById('timer_resume')
-let $pause
+let $pause = document.getElementById('timer_pause')
 let $timerStart = document.querySelector('.timer_start')
 let $plus30 = document.querySelector('.plus30')
 
@@ -81,8 +81,8 @@ function getRandomInt(min, max) {
 
 const myInput = document.getElementById("countOfPlayers");
 $(myInput).val(12)
+
 function stepper(btn){
-    
     let id = btn.getAttribute("id");
     let min = myInput.getAttribute("min");
     let max = myInput.getAttribute("max");
@@ -113,7 +113,7 @@ function stepper(btn){
 let $imgAnim = document.querySelector('.imgAnim')
 let needReverse = false
 
-$imgAnim.addEventListener('click', () => {
+function imgAnim() {
     if(!needReverse){
     $imgAnim.setAttribute('src', 'pauseTimerImg/resumeToPause.gif')
     $imgAnim.setAttribute('id', 'timer_pause')
@@ -126,35 +126,47 @@ $imgAnim.addEventListener('click', () => {
     }else{
         $imgAnim.setAttribute('src', 'pauseTimerImg/pauseToResume.gif')
         $imgAnim.setAttribute('id', 'timer_resume')
+        $resume = document.querySelector('#timer_resume')
         setTimeout(() => {
             $imgAnim.setAttribute('src', 'pauseTimerImg/resume.png')
         }, 666) 
         needReverse = false
     }
-})
+    
+}
 
 $timerTime.innerText = 60
 let isFirst = true
 let forSecondInterval
-let changableTimeForTimer = 60
+let changableTimeForTimer = 10
 
-$('#timer_resume').click(() => {
-    $pause = document.querySelector('#timer_pause')
-    startNewTimer(changableTimeForTimer)
-})
+// $resume.addEventListener('click', () => {
+//     startNewTimer(changableTimeForTimer)
+// })
 
 $('.timer_new60').click(() => {
-    clearInterval(click)
+    clearInterval(forSecondInterval)
     changableTimeForTimer = 60
+    $timerTime.innerText = changableTimeForTimer
+
+    if($imgAnim.id = 'timer_pause'){
+    $imgAnim.setAttribute('src', 'pauseTimerImg/pauseToResume.gif')
+        $imgAnim.setAttribute('id', 'timer_resume')
+        $resume = document.querySelector('#timer_resume')
+        setTimeout(() => {
+            $imgAnim.setAttribute('src', 'pauseTimerImg/resume.png')
+        }, 666)   
+    }
+    needReverse = false
 }) 
+
 
 function startNewTimer(time = 60){
     if(!isFirst) clearInterval(forSecondInterval)
-    
 
-    $pause.addEventListener('click', () => {
-        clearInterval(forSecondInterval)
-    })
+    $pause = document.querySelector('#timer_pause')
+
+    
     
     
 
@@ -171,7 +183,19 @@ function startNewTimer(time = 60){
     }, 1 * second)
 }
 
-
+$resume.addEventListener('click', () => {
+    return new Promise((resolve, reject) => {
+        imgAnim()
+        resolve()
+    }).then(() => {
+        startNewTimer(changableTimeForTimer)
+        $pause.addEventListener('click', () => {
+            return new Promise((resolve, reject) => {
+                imgAnim()
+                resolve()
+            }).then(() => {startNewTimer(changableTimeForTimer)})
+    })
+})
 
 
 
