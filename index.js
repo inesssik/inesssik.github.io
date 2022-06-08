@@ -143,7 +143,7 @@ function imgAnim(needReverse) {
 $timerTime.innerText = 60
 let isFirst = true
 let forSecondInterval
-let changableTimeForTimer = 10
+let changableTimeForTimer = 60
 
 $('.timer_new60').click(() => {
     clearInterval(forSecondInterval)
@@ -154,7 +154,7 @@ $('.timer_new60').click(() => {
     let $resumeToPause = document.querySelector(".resumeToPause")
     $pause = document.querySelector(".timer_pause")
     let $pauseToResume = document.querySelector('.pauseToResume')
-    
+
     if($resume.classList.contains('displayNone')){
         $pause.classList.add('displayNone');
         $pauseToResume.classList.remove('displayNone');
