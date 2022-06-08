@@ -7,8 +7,9 @@
     <script src="jquery-3.6.0.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Orbitron&display=swap" rel="stylesheet"><link href="style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="mafiaIcon.png" type="image/x-icon">
+    
     <title>Randomizer Mafia</title>
 </head>
 <body>
@@ -21,34 +22,43 @@
                 <input type="number" min="0" step="1" id="countOfPlayers">
                 <button id="increment" onclick="stepper(this)"> + </button>
             </div>
-            <button class="btn-grad reset_btn" onclick="resetRole()">RESET ROLES</button>
             <div id="timer">
                 <div id="timer_time"></div>
-                <button class="timer_start btn-grad">Start new 60</button>
+                <button class="timer_new60 btn-grad">New 60</button>
                 <div class="timer_panel">
-                    <button id="timer_pause" class="btn-grad">Pause</button>
-                    <button id="timer_resume" class="btn-grad">Resume</button>
-               </div>
+                    <div class="pauseResumeAnimation">
+                        <img class="imgAnim" id="timer_resume" src="pauseTimerImg/resume.png" alt="resume">
+                    </div>
+                    <!-- <button id="timer_pause" class="btn-grad timer_panel_item">Pause</button>
+                    <button id="timer_resume" class="btn-grad timer_panel_item">Resume</button> -->
+                    <!-- <button class="btn-grad plus30 timer_panel_item">+30s</button> -->
+                </div>
             </div>
         </div>
-
+        
         <div class="roles">
             <div class="role_header">All roles</div>
-            <div class="role_list">
-            </div>
+            <div class="role_list"></div>
         </div>
-
+        
         <div class="btns">
-            <button class="btn-grad" id="addMafia" onclick="addMaf()">Add Mafia</button>
-            <button class="btn-grad" id="addDon" onclick="addDon()">Add Don</button>
-            <button class="btn-grad" id="addDoctor" onclick="addDoc()">Add Doctor</button>
-            <button class="btn-grad" id="addSheriff" onclick="addSheriff()">Add Sheriff</button>
+            <button class="button-85" id="addMafia" onclick="addMaf()">Add Mafia</button>
+            <button class="button-85" id="addDon" onclick="addDon()">Add Don</button>
+            <button class="button-85" id="addDoctor" onclick="addDoc()">Add Doctor</button>
+            <button class="button-85" id="addSheriff" onclick="addSheriff()">Add Sheriff</button>
         </div>
         
     </div>
 
-    <div class="resultBtn">
-        <button id="viewResult" class="btn-grad">Result</button>
+    <div class="footer">
+        <button class="button-29 reset_btn" onclick="resetRole()">RESET ROLES</button>
+        <button class="button-82-pushable" id="viewResult">
+            <span class="button-82-shadow"></span>
+            <span class="button-82-edge"></span>
+            <span class="button-82-front text">
+                Result
+            </span>
+          </button>
     </div>
 
 </body>

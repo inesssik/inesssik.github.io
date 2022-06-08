@@ -5,9 +5,10 @@ let $role_list = document.querySelector('.role_list')
 let second = 1000
 let $timer = document.getElementById('timer')
 let $timerTime = document.getElementById('timer_time')
-let $pause = document.getElementById('timer_pause')
 let $resume = document.getElementById('timer_resume')
-
+let $pause
+let $timerStart = document.querySelector('.timer_start')
+let $plus30 = document.querySelector('.plus30')
 
 function addMaf(){
     roles.push('Mafia')
@@ -105,27 +106,70 @@ function stepper(btn){
     $role_list.innerHTML = ""
 }
 
-$timerTime.innerText = 60
 
-function startNewTimer(time){
+
+// Animation of Pause/Resume
+
+let $imgAnim = document.querySelector('.imgAnim')
+let needReverse = false
+
+$imgAnim.addEventListener('click', () => {
+    if(!needReverse){
+    $imgAnim.setAttribute('src', 'pauseTimerImg/resumeToPause.gif')
+    $imgAnim.setAttribute('id', 'timer_pause')
+    $pause = document.querySelector('#timer_pause')
+    setTimeout(() => {
+        $imgAnim.setAttribute('src', 'pauseTimerImg/pause.png')
+    }, 666)
+    needReverse = true
+    
+    }else{
+        $imgAnim.setAttribute('src', 'pauseTimerImg/pauseToResume.gif')
+        $imgAnim.setAttribute('id', 'timer_resume')
+        setTimeout(() => {
+            $imgAnim.setAttribute('src', 'pauseTimerImg/resume.png')
+        }, 666) 
+        needReverse = false
+    }
+})
+
+$timerTime.innerText = 60
+let isFirst = true
+let forSecondInterval
+let changableTimeForTimer = 60
+
+$('#timer_resume').click(() => {
+    $pause = document.querySelector('#timer_pause')
+    startNewTimer(changableTimeForTimer)
+})
+
+$('.timer_new60').click(() => {
+    clearInterval(click)
+    changableTimeForTimer = 60
+}) 
+
+function startNewTimer(time = 60){
+    if(!isFirst) clearInterval(forSecondInterval)
+    
+
     $pause.addEventListener('click', () => {
         clearInterval(forSecondInterval)
     })
     
-    $resume.addEventListener('click', () => {
-        startNewTimer(time)
-    }) 
+    
 
-    time++
-    let forSecondInterval = setInterval(() => {
+    // $plus30.addEventListener('click', () => {
+    //     time += 30
+    // }) 
+
+    forSecondInterval = setInterval(() => {
         $timerTime.innerText = time -= 1
         if(time <= 0){
             clearInterval(forSecondInterval)
         }
-    
+        changableTimeForTimer = time
     }, 1 * second)
 }
-
 
 
 
