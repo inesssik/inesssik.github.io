@@ -193,6 +193,7 @@ button{
 .timer_panel{
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .timer_panel_item{
@@ -231,7 +232,9 @@ button{
     cursor: pointer;
 }
 
-
+.displayNone{
+    display: none;
+}
 
 
 

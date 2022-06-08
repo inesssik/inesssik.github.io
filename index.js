@@ -5,8 +5,8 @@ let $role_list = document.querySelector('.role_list')
 let second = 1000
 let $timer = document.getElementById('timer')
 let $timerTime = document.getElementById('timer_time')
-let $resume = document.getElementById('timer_resume')
-let $pause = document.getElementById('timer_pause')
+let $resume = document.querySelector('.timer_resume')
+let $pause = document.querySelector('.timer_pause')
 let $timerStart = document.querySelector('.timer_start')
 let $plus30 = document.querySelector('.plus30')
 
@@ -111,25 +111,30 @@ function stepper(btn){
 // Animation of Pause/Resume
 
 let $imgAnim = document.querySelector('.imgAnim')
-let needReverse = false
 
-function imgAnim() {
+function imgAnim(needReverse) {
+    $resume = document.querySelector('.timer_resume')
+    let $resumeToPause = document.querySelector(".resumeToPause")
+    $pause = document.querySelector(".timer_pause")
+    let $pauseToResume = document.querySelector('.pauseToResume')
+
     if(!needReverse){
-    $imgAnim.setAttribute('src', 'pauseTimerImg/resumeToPause.gif')
-    $imgAnim.setAttribute('id', 'timer_pause')
-    $pause = document.querySelector('#timer_pause')
+        $resume.classList.add('displayNone');
+        $resumeToPause.classList.remove('displayNone');
     setTimeout(() => {
-        $imgAnim.setAttribute('src', 'pauseTimerImg/pause.png')
+        $resumeToPause.classList.add('displayNone');
+        $pause.classList.remove('displayNone');
     }, 666)
     needReverse = true
-    
+
     }else{
-        $imgAnim.setAttribute('src', 'pauseTimerImg/pauseToResume.gif')
-        $imgAnim.setAttribute('id', 'timer_resume')
-        $resume = document.querySelector('#timer_resume')
+        $pause.classList.add('displayNone');
+        $pauseToResume.classList.remove('displayNone');
         setTimeout(() => {
-            $imgAnim.setAttribute('src', 'pauseTimerImg/resume.png')
-        }, 666) 
+            $pauseToResume.classList.add('displayNone');
+            $resume.classList.remove('displayNone');
+        }, 666)
+
         needReverse = false
     }
     
@@ -140,39 +145,40 @@ let isFirst = true
 let forSecondInterval
 let changableTimeForTimer = 10
 
-// $resume.addEventListener('click', () => {
-//     startNewTimer(changableTimeForTimer)
-// })
-
 $('.timer_new60').click(() => {
     clearInterval(forSecondInterval)
     changableTimeForTimer = 60
     $timerTime.innerText = changableTimeForTimer
 
-    if($imgAnim.id = 'timer_pause'){
-    $imgAnim.setAttribute('src', 'pauseTimerImg/pauseToResume.gif')
-        $imgAnim.setAttribute('id', 'timer_resume')
-        $resume = document.querySelector('#timer_resume')
+    $resume = document.querySelector('.timer_resume')
+    let $resumeToPause = document.querySelector(".resumeToPause")
+    $pause = document.querySelector(".timer_pause")
+    let $pauseToResume = document.querySelector('.pauseToResume')
+    
+    if($resume.classList.contains('displayNone')){
+        $pause.classList.add('displayNone');
+        $pauseToResume.classList.remove('displayNone');
         setTimeout(() => {
-            $imgAnim.setAttribute('src', 'pauseTimerImg/resume.png')
-        }, 666)   
+            $pauseToResume.classList.add('displayNone');
+            $resume.classList.remove('displayNone');
+        }, 666)
+
+        needReverse = false
     }
-    needReverse = false
 }) 
 
+$resume.addEventListener('click', () => {
+    imgAnim(false)
+    startNewTimer(changableTimeForTimer)
+}) 
 
 function startNewTimer(time = 60){
     if(!isFirst) clearInterval(forSecondInterval)
 
-    $pause = document.querySelector('#timer_pause')
-
-    
-    
-    
-
-    // $plus30.addEventListener('click', () => {
-    //     time += 30
-    // }) 
+    $pause.addEventListener('click', () => {
+        imgAnim(true)
+        clearInterval(forSecondInterval)
+    })
 
     forSecondInterval = setInterval(() => {
         $timerTime.innerText = time -= 1
@@ -182,20 +188,6 @@ function startNewTimer(time = 60){
         changableTimeForTimer = time
     }, 1 * second)
 }
-
-$resume.addEventListener('click', () => {
-    return new Promise((resolve, reject) => {
-        imgAnim()
-        resolve()
-    }).then(() => {
-        startNewTimer(changableTimeForTimer)
-        $pause.addEventListener('click', () => {
-            return new Promise((resolve, reject) => {
-                imgAnim()
-                resolve()
-            }).then(() => {startNewTimer(changableTimeForTimer)})
-    })
-})
 
 
 

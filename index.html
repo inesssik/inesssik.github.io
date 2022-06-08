@@ -24,12 +24,16 @@
             </div>
             <div id="timer">
                 <div id="timer_time"></div>
-                <button class="timer_new60 btn-grad">New 60</button>
                 <div class="timer_panel">
                     <div class="pauseResumeAnimation">
-                        <img class="imgAnim" id="timer_resume " src="pauseTimerImg/resume.png" alt="resume">
+                        <img class="imgAnim timer_resume" src="pauseTimerImg/resume.png">
+                        <img class="imgAnim timer_pause displayNone" src="pauseTimerImg/pause.png">
+                        <img class="imgAnim resumeToPause displayNone" src="pauseTimerImg/resumeToPause.gif">
+                        <img class="imgAnim pauseToResume displayNone" src="pauseTimerImg/pauseToResume.gif">
                     </div>
-                    <!-- <button class="btn-grad plus30 timer_panel_item">+30s</button> -->
+                    <div class="timer_panel_start">
+                        <button class="timer_new60 btn-grad">New 60</button>
+                    </div>
                 </div>
             </div>
         </div>
