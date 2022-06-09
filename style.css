@@ -267,11 +267,7 @@ input::-webkit-inner-spin-button{
     align-items: center;    
 }
 
-.timer_new60{
-    background-color: grey;
-    display: inline-flex;
-    font-size: 30px;
-}
+
 
 .timer_panel{
     display: flex;
@@ -652,6 +648,8 @@ input::-webkit-inner-spin-button{
   font-size:16px;
   color:#fff;
   transition: 0.3s;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
 }
 .input-container input:focus{ 
  border:none;	
@@ -697,4 +695,10 @@ input::-webkit-inner-spin-button{
     .footer{
     margin-top: 6%;
     }
+}
+
+.timer_new60{
+  display: inline-flex;
+  font-size: 30px;
+  font-family: 'Orbitron', sans-serif;
 }
