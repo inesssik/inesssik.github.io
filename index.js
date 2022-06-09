@@ -37,6 +37,12 @@ function addSheriff(){
     `<p class="role_item" id=${$role_list.childElementCount}>Sheriff</p>`
 }
 
+function addCustomRole(){
+    roles.push(document.querySelector('.customRoleInput').value)
+    $role_list.innerHTML += 
+    `<p class="role_item" id=${$role_list.childElementCount}>${document.querySelector('.customRoleInput').value}</p>`
+}
+
 function createArray(count){
     for(let i = 1; i <= count; i++){
         arrayOfNumbers[i-1] = i
@@ -52,7 +58,10 @@ function createArray(count){
     arrayOfNumbers = []
 }
 
+let isSecond = false
+
 function takeRandomRoles(arrayArg){
+
     if(arrayArg[0] == null){
         return console.error('Error, write count of players')
     }
@@ -60,16 +69,22 @@ function takeRandomRoles(arrayArg){
     let lengthOfRoles = roles.length
 
     for(let i = 0; i < lengthOfRoles; i++){
+        if(isSecond){
+            document.querySelectorAll('.role_item')[i].innerHTML = document.querySelectorAll('.role_item')[i].innerHTML.slice(0, this.length - 14)
+        }
 
         let randomPlayer = arrayArg[getRandomInt(0, arrayArg.length)]
         console.log(randomPlayer)
-
-        document.querySelectorAll('.role_item')[i].innerText += ` — ${randomPlayer}'th player`
-    
+        if(randomPlayer >= 10){
+            document.querySelectorAll('.role_item')[i].innerText += ` — ${randomPlayer}'th player`
+        }else{
+            document.querySelectorAll('.role_item')[i].innerText += ` — 0${randomPlayer}'th player`
+        }
         arrayArg.splice(arrayArg.indexOf(randomPlayer), 1)
         roles.shift()
         console.log(arrayArg)
     }
+    isSecond = true
 }
 
 $button.addEventListener('click', () => {

@@ -50,13 +50,14 @@
         </div>
         
         <div class="btns">
-            <!-- <div class="logo">
-                <img class="logo_img" src="89sqd.png">
-            </div> -->
-            <button class="addRoleButton" id="addMafia" onclick="addMaf()">Add Mafia</button>
-            <button class="addRoleButton" id="addDon" onclick="addDon()">Add Don</button>
-            <button class="addRoleButton" id="addDoctor" onclick="addDoc()">Add Doctor</button>
-            <button class="addRoleButton" id="addSheriff" onclick="addSheriff()">Add Sheriff</button>
+            <div class="btns_header">ADD ROLES</div>
+            <div class="addRoleBtns">
+                <button class="addRoleButton" id="addMafia" onclick="addMaf()">Add Mafia</button>
+                <button class="addRoleButton" id="addDon" onclick="addDon()">Add Don</button>
+                <button class="addRoleButton" id="addDoctor" onclick="addDoc()">Add Doctor</button>
+                <button class="addRoleButton" id="addSheriff" onclick="addSheriff()">Add Sheriff</button>
+            </div>
+            <span></span>
         </div>
         
     </div>
@@ -76,9 +77,10 @@
         </div>
         <div class="customRole footer_item">
             <div class="input-container">
-                <input type="text" required=""/>
+                <input class="customRoleInput" type="text" required=""/>
                 <label>Custom Role</label>		
             </div>  
+            <button class="button-29 addCustomRoleBtn" onclick="addCustomRole()">ADD</button>
         </div>
     </div>
 </body>

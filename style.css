@@ -1,6 +1,6 @@
 
 body{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     background-color: #000000;
     background-image: url("mafiaWallpaper.jpg");
     background-size: 100% cover;
@@ -41,7 +41,8 @@ button{
 .input_header{
     font-size: 30px;
     font-weight: bold;
-    margin-top: 3vh;
+    margin-top: 4vh;
+    letter-spacing: 3px;
 }
 
 #countOfPlayers{
@@ -49,19 +50,8 @@ button{
     text-align: center;
 }
 
-/* .logo{
-    display: flex;
-    width: 100px;
-    height: 100px;
-}
-
-.logo_img{
-    width: 100px;
-    height: 100px;
-    z-index: -1;
-} */
-
 .roles{
+    display: inline-block;
     width: 33.333%;
     text-align: center;
     margin-top: 2vh;
@@ -72,15 +62,42 @@ button{
     font-size: 50px;
     font-weight: bolder;
     text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.role_list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.role_item{
+    width: 20%;
+    text-align: left;
+    white-space: nowrap;
 }
 
 .btns{
     width: 33.33%;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+}
+
+.btns_header{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 4vh;
+    letter-spacing: 3px;
+}
+
+.addRoleBtns{
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 0px;
+    align-items: center;
 }
 
 .btn-grad {
@@ -148,6 +165,7 @@ button{
 #viewResult{
     width: 300px;
     height: 55px;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .decrBtn:active{
@@ -184,6 +202,7 @@ input[type="number"]{
     box-shadow: 
     inset 0px 11px 8px -10px rgb(0, 0, 0),
     inset 0px -11px 8px -10px rgb(0, 0, 0); 
+    font-family: 'Orbitron', sans-serif;
 }
 
 input[type="number"]:focus-visible{
@@ -313,6 +332,7 @@ input::-webkit-inner-spin-button{
 .timer_panel_plusMinus button{
     width: 50%;
     margin: 10px;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .timer_panel_new60{
@@ -354,6 +374,9 @@ input::-webkit-inner-spin-button{
   margin-top: 30px;
   width: 400px;
   text-transform: uppercase;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 35px;
+  letter-spacing: 2px;
 }
 
 .addRoleButton:before {
@@ -527,7 +550,7 @@ input::-webkit-inner-spin-button{
   color: #fff;
   cursor: pointer;
   display: inline-flex;
-  font-family: "JetBrains Mono",monospace;
+  font-family: 'Orbitron', sans-serif;
   height: 48px;
   justify-content: center;
   line-height: 1;
@@ -545,6 +568,7 @@ input::-webkit-inner-spin-button{
   white-space: nowrap;
   will-change: box-shadow,transform;
   font-size: 18px;
+  
 }
 
 .button-29:focus {
@@ -627,15 +651,16 @@ input::-webkit-inner-spin-button{
   padding:8px 0 5px 0;
   font-size:16px;
   color:#fff;
+  transition: 0.3s;
 }
 .input-container input:focus{ 
  border:none;	
  outline:none;
- border-bottom:1px solid #e74c3c;	
+ border-bottom:1px solid #3264fe;;	
 }
 .btn{
 	color:#fff;
-	background-color:#e74c3c;
+	background-color:#3264fe;
 	outline: none;
     border: 0;
     color: #fff;
@@ -660,4 +685,16 @@ input::-webkit-inner-spin-button{
 	top:-12px;
 	font-size:12px;
 	
+}
+
+.addCustomRoleBtn{
+    font-size: 18px;
+    height: 32px;
+    margin-left: 5px;
+}
+
+@media screen and (min-width: 1500px) {
+    .footer{
+    margin-top: 6%;
+    }
 }
