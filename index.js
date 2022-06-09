@@ -59,6 +59,7 @@ function createArray(count){
 }
 
 let isSecond = false
+let lastRoles = 0
 
 function takeRandomRoles(arrayArg){
 
@@ -67,14 +68,17 @@ function takeRandomRoles(arrayArg){
     }
     
     let lengthOfRoles = roles.length
+    
+    if(isSecond){
+    for(let j = 0; j < lastRoles; j++)
+        document.querySelectorAll('.role_item')[j].innerHTML = document.querySelectorAll('.role_item')[j].innerHTML.slice(0, this.length - 14)
+    }
+
+    lastRoles = 0
 
     for(let i = 0; i < lengthOfRoles; i++){
-        if(isSecond){
-            document.querySelectorAll('.role_item')[i].innerHTML = document.querySelectorAll('.role_item')[i].innerHTML.slice(0, this.length - 14)
-        }
 
         let randomPlayer = arrayArg[getRandomInt(0, arrayArg.length)]
-        console.log(randomPlayer)
         if(randomPlayer >= 10){
             document.querySelectorAll('.role_item')[i].innerText += ` — ${randomPlayer}'th player`
         }else{
@@ -82,9 +86,12 @@ function takeRandomRoles(arrayArg){
         }
         arrayArg.splice(arrayArg.indexOf(randomPlayer), 1)
         roles.shift()
-        console.log(arrayArg)
+        lastRoles++
     }
-    isSecond = true
+    
+    if(lengthOfRoles > 0){
+        isSecond = true
+    }
 }
 
 $button.addEventListener('click', () => {
@@ -118,6 +125,8 @@ function stepper(btn){
  }
 
  function resetRole(){
+    isSecond = false
+    lastRoles = 0
     roles = []
     $role_list.innerHTML = ""
 }
