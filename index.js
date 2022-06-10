@@ -181,26 +181,25 @@ function imgAnim(needReverse) {
         $('.timer_new60').unbind()
         setTimeout(() => {
             $('.timer_new60').click(() => {
-                if(!onAnim){
-                    clearInterval(forSecondInterval)
-                    changableTimeForTimer = 60
-                    $timerTime.innerText = changableTimeForTimer
+                clearInterval(forSecondInterval)
+                changableTimeForTimer = 60
+                $timerTime.innerText = changableTimeForTimer
             
-                    $resume = document.querySelector('.timer_resume')
-                    $pause = document.querySelector(".timer_pause")
-                    let $pauseToResume = document.querySelector('.pauseToResume')
+                $resume = document.querySelector('.timer_resume')
+                $pause = document.querySelector(".timer_pause")
+                let $pauseToResume = document.querySelector('.pauseToResume')
             
-                    if($resume.classList.contains('displayNone')){
-                        $pause.classList.add('displayNone');
-                        $pauseToResume.classList.remove('displayNone');
-                        setTimeout(() => {
-                            $pauseToResume.classList.add('displayNone');
-                            $resume.classList.remove('displayNone');
-                        }, 666)
+                if($resume.classList.contains('displayNone')){
+                    $pause.classList.add('displayNone');
+                    $pauseToResume.classList.remove('displayNone');
+                    setTimeout(() => {
+                        $pauseToResume.classList.add('displayNone');
+                        $resume.classList.remove('displayNone');
+                    }, 666)
             
-                        needReverse = false
-                    }
+                    needReverse = false
                 }
+                
             }) 
             $pauseToResume.classList.add('displayNone');
             $resume.classList.remove('displayNone');
