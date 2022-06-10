@@ -11,6 +11,7 @@ let $timerStart = document.querySelector('.timer_start')
 let $plus30 = document.querySelector('.plus30')
 let $minus30 = document.querySelector('.minus30')
 
+
 function addMaf(){
     roles.push('Mafia')
     $role_list.innerHTML += 
@@ -137,6 +138,7 @@ function stepper(btn){
 
 let $imgAnim = document.querySelector('.imgAnim')
 
+
 function imgAnim(needReverse) {
     $resume = document.querySelector('.timer_resume')
     let $resumeToPause = document.querySelector(".resumeToPause")
@@ -146,16 +148,60 @@ function imgAnim(needReverse) {
     if(!needReverse){
         $resume.classList.add('displayNone');
         $resumeToPause.classList.remove('displayNone');
+        $('.timer_new60').unbind()
     setTimeout(() => {
         $resumeToPause.classList.add('displayNone');
         $pause.classList.remove('displayNone');
+        $('.timer_new60').click(() => {
+            clearInterval(forSecondInterval)
+            changableTimeForTimer = 60
+            $timerTime.innerText = changableTimeForTimer
+        
+            $resume = document.querySelector('.timer_resume')
+            $pause = document.querySelector(".timer_pause")
+            let $pauseToResume = document.querySelector('.pauseToResume')
+        
+            if($resume.classList.contains('displayNone')){
+                $pause.classList.add('displayNone');
+                $pauseToResume.classList.remove('displayNone');
+                setTimeout(() => {
+                    $pauseToResume.classList.add('displayNone');
+                    $resume.classList.remove('displayNone');
+                }, 666)
+        
+                needReverse = false
+            }
+        }) 
     }, 666)
     needReverse = true
 
     }else{
         $pause.classList.add('displayNone');
         $pauseToResume.classList.remove('displayNone');
+        $('.timer_new60').unbind()
         setTimeout(() => {
+            $('.timer_new60').click(() => {
+                if(!onAnim){
+                    clearInterval(forSecondInterval)
+                    changableTimeForTimer = 60
+                    $timerTime.innerText = changableTimeForTimer
+            
+                    $resume = document.querySelector('.timer_resume')
+                    $pause = document.querySelector(".timer_pause")
+                    let $pauseToResume = document.querySelector('.pauseToResume')
+            
+                    if($resume.classList.contains('displayNone')){
+                        $pause.classList.add('displayNone');
+                        $pauseToResume.classList.remove('displayNone');
+                        setTimeout(() => {
+                            $pauseToResume.classList.add('displayNone');
+                            $resume.classList.remove('displayNone');
+                        }, 666)
+            
+                        needReverse = false
+                    }
+                }
+            }) 
             $pauseToResume.classList.add('displayNone');
             $resume.classList.remove('displayNone');
         }, 666)
@@ -183,23 +229,25 @@ $minus30.addEventListener('click', () => {
 })
 
 $('.timer_new60').click(() => {
-    clearInterval(forSecondInterval)
-    changableTimeForTimer = 60
-    $timerTime.innerText = changableTimeForTimer
+    if(!onAnim){
+        clearInterval(forSecondInterval)
+        changableTimeForTimer = 60
+        $timerTime.innerText = changableTimeForTimer
 
-    $resume = document.querySelector('.timer_resume')
-    $pause = document.querySelector(".timer_pause")
-    let $pauseToResume = document.querySelector('.pauseToResume')
+        $resume = document.querySelector('.timer_resume')
+        $pause = document.querySelector(".timer_pause")
+        let $pauseToResume = document.querySelector('.pauseToResume')
 
-    if($resume.classList.contains('displayNone')){
-        $pause.classList.add('displayNone');
-        $pauseToResume.classList.remove('displayNone');
-        setTimeout(() => {
-            $pauseToResume.classList.add('displayNone');
-            $resume.classList.remove('displayNone');
-        }, 666)
+        if($resume.classList.contains('displayNone')){
+            $pause.classList.add('displayNone');
+            $pauseToResume.classList.remove('displayNone');
+            setTimeout(() => {
+                $pauseToResume.classList.add('displayNone');
+                $resume.classList.remove('displayNone');
+            }, 666)
 
-        needReverse = false
+            needReverse = false
+        }
     }
 }) 
 
