@@ -228,7 +228,6 @@ $minus30.addEventListener('click', () => {
 })
 
 $('.timer_new60').click(() => {
-    if(!onAnim){
         clearInterval(forSecondInterval)
         changableTimeForTimer = 60
         $timerTime.innerText = changableTimeForTimer
@@ -247,7 +246,6 @@ $('.timer_new60').click(() => {
 
             needReverse = false
         }
-    }
 }) 
 
 $('#decrement').click(() => {

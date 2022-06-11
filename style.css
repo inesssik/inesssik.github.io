@@ -1,6 +1,7 @@
 
 html{
   width: 100%;
+  overflow: hidden;
 }
 
 body{
@@ -9,7 +10,6 @@ body{
     background-image: url("mafiaWallpaper.jpg");
     background-size: 100% cover;
     background-repeat: no-repeat;
-    background-size: 100%;
     min-height: 100vh;
     width: 100%;
     margin: 0;
@@ -164,7 +164,9 @@ button{
 .footer{
     display: flex;
     justify-content: center;
-    margin-top: 1%;
+    position: absolute;
+    width: 100%;
+    bottom: 15px;
 }
 
 .footer_item{
@@ -284,6 +286,8 @@ input::-webkit-inner-spin-button{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
+    margin-right: none;
 }
 
 .timer_panel_item{
@@ -725,7 +729,7 @@ input::-webkit-inner-spin-button{
 
 }
 
-@media screen and (max-width: 756px) {
+@media screen and (max-width: 950px) {
   .addRoleButton{
     width: 200px;
     font-size: 20px;
@@ -761,11 +765,28 @@ input::-webkit-inner-spin-button{
     font-size: 10px;
   }
 
+  .role_item{
+    font-size: 15px;
+  }
+
+  .timer_panel_plusMinus{
+    width: 150px;
+  }
+
+  .imgAnim{
+    width: 100px;
+    height: 100px;
+  }
+
+  .role_item{
+    font-size: 10px;
+  }
+
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 600px) {
   .timer_panel{
-    width: 50%;
+    width: 150px;
   }
 
   .container{
@@ -794,7 +815,7 @@ input::-webkit-inner-spin-button{
   }
 
   .footer{
-   margin-top: 30%;
+   margin-top: 40px;
   }
 
   .result{
@@ -811,5 +832,18 @@ input::-webkit-inner-spin-button{
   
   .btns_header{
     font-size: 20px;
+  }
+
+  .timer_panel_plusMinus{
+    width: 150px;
+  }
+
+  .imgAnim{
+    width: 100px;
+    height: 100px;
+  }
+
+  .role_item{
+    font-size: 10px;
   }
 }
