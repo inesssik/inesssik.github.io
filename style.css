@@ -1,16 +1,24 @@
 
+html{
+  width: 100%;
+  overflow: hidden;
+}
+
 body{
     font-family: 'Orbitron', sans-serif;
     background-color: #000000;
     background-image: url("mafiaWallpaper.jpg");
     background-size: 100% cover;
     background-repeat: no-repeat;
-    background-size: 100%;
     min-height: 100vh;
+    width: 100%;
     margin: 0;
     padding: 0;
     color: #fff;
+
+    overflow: hidden;
 } 
+
 
 p{
     margin: 0;
@@ -28,6 +36,7 @@ button{
 
 .functional{
     display: flex;
+    width: 100%;
 }
 
 .inputs{
@@ -155,7 +164,9 @@ button{
 .footer{
     display: flex;
     justify-content: center;
-    margin-top: 1%;
+    position: absolute;
+    width: 100%;
+    bottom: 15px;
 }
 
 .footer_item{
@@ -275,6 +286,8 @@ input::-webkit-inner-spin-button{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
+    margin-right: none;
 }
 
 .timer_panel_item{
@@ -693,14 +706,144 @@ input::-webkit-inner-spin-button{
     margin-left: 5px;
 }
 
+.timer_new60{
+  display: inline-flex;
+  font-size: 30px;
+  font-family: 'Orbitron', sans-serif;
+}
+
 @media screen and (min-width: 1500px) {
     .footer{
     margin-top: 6%;
     }
 }
 
-.timer_new60{
-  display: inline-flex;
-  font-size: 30px;
-  font-family: 'Orbitron', sans-serif;
+@media screen and (max-width: 1200px) {
+  .role_list{
+    align-items: flex-start;
+  }
+
+  .container{
+    width: 200px;
+  }
+
+}
+
+@media screen and (max-width: 950px) {
+  .addRoleButton{
+    width: 200px;
+    font-size: 20px;
+  }
+
+  .footer_item {
+    width: 70%;
+  }
+
+  .role_header{
+    font-size: 50px;
+  }
+
+  body{
+    background-image: none;
+  }
+
+  .addCustomRoleBtn{
+    font-size: 10px;
+    width: 1%;
+  }
+
+  .reset_btn{
+    width: 75%;
+    font-size: 10px;
+  }
+
+  .input-container {
+    width: 100px;
+  }
+  
+  .input-container label{
+    font-size: 10px;
+  }
+
+  .role_item{
+    font-size: 15px;
+  }
+
+  .timer_panel_plusMinus{
+    width: 150px;
+  }
+
+  .imgAnim{
+    width: 100px;
+    height: 100px;
+  }
+
+  .role_item{
+    font-size: 10px;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .timer_panel{
+    width: 150px;
+  }
+
+  .container{
+    width: 120px;
+  }
+
+  input[type="number"]{
+    font-size: 20px;
+  }
+
+  #increment{
+    width: 35px;
+  }
+
+  #decrement{
+    width: 40px;
+  }
+
+  .addRoleBtns{
+    justify-content: flex-end;
+  }
+
+  .addRoleButton{
+    width: 120px;
+    font-size: 15px;
+  }
+
+  .footer{
+   margin-top: 40px;
+  }
+
+  .result{
+    width: 33%;
+  }
+
+  .input_header{
+    font-size: 15px;
+  }
+
+  .role_header{
+    font-size: 25px;
+  }
+  
+  .btns_header{
+    font-size: 20px;
+  }
+
+  .timer_panel_plusMinus{
+    width: 150px;
+  }
+
+  .imgAnim{
+    width: 100px;
+    height: 100px;
+  }
+
+  .role_item{
+    font-size: 10px;
+  }
 }
