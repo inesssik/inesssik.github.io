@@ -1,4 +1,8 @@
 
+html{
+  width: 100%;
+}
+
 body{
     font-family: 'Orbitron', sans-serif;
     background-color: #000000;
@@ -7,10 +11,14 @@ body{
     background-repeat: no-repeat;
     background-size: 100%;
     min-height: 100vh;
+    width: 100%;
     margin: 0;
     padding: 0;
     color: #fff;
+
+    overflow: hidden;
 } 
+
 
 p{
     margin: 0;
@@ -28,6 +36,7 @@ button{
 
 .functional{
     display: flex;
+    width: 100%;
 }
 
 .inputs{
@@ -693,14 +702,114 @@ input::-webkit-inner-spin-button{
     margin-left: 5px;
 }
 
+.timer_new60{
+  display: inline-flex;
+  font-size: 30px;
+  font-family: 'Orbitron', sans-serif;
+}
+
 @media screen and (min-width: 1500px) {
     .footer{
     margin-top: 6%;
     }
 }
 
-.timer_new60{
-  display: inline-flex;
-  font-size: 30px;
-  font-family: 'Orbitron', sans-serif;
+@media screen and (max-width: 1200px) {
+  .role_list{
+    align-items: flex-start;
+  }
+
+  .container{
+    width: 200px;
+  }
+
+}
+
+@media screen and (max-width: 756px) {
+  .addRoleButton{
+    width: 200px;
+    font-size: 20px;
+  }
+
+  .footer_item {
+    width: 70%;
+  }
+
+  .role_header{
+    font-size: 50px;
+  }
+
+  body{
+    background-image: none;
+  }
+
+  .addCustomRoleBtn{
+    font-size: 10px;
+    width: 1%;
+  }
+
+  .reset_btn{
+    width: 75%;
+    font-size: 10px;
+  }
+
+  .input-container {
+    width: 100px;
+  }
+  
+  .input-container label{
+    font-size: 10px;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+  .timer_panel{
+    width: 50%;
+  }
+
+  .container{
+    width: 120px;
+  }
+
+  input[type="number"]{
+    font-size: 20px;
+  }
+
+  #increment{
+    width: 35px;
+  }
+
+  #decrement{
+    width: 40px;
+  }
+
+  .addRoleBtns{
+    justify-content: flex-end;
+  }
+
+  .addRoleButton{
+    width: 120px;
+    font-size: 15px;
+  }
+
+  .footer{
+   margin-top: 30%;
+  }
+
+  .result{
+    width: 33%;
+  }
+
+  .input_header{
+    font-size: 15px;
+  }
+
+  .role_header{
+    font-size: 25px;
+  }
+  
+  .btns_header{
+    font-size: 20px;
+  }
 }
