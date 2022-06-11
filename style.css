@@ -726,7 +726,11 @@ input::-webkit-inner-spin-button{
   .container{
     width: 200px;
   }
-
+  .addRoleButton{
+    width: 260px;
+    font-size: 20px;
+  }
+  
 }
 
 @media screen and (max-width: 950px) {
