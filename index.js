@@ -249,13 +249,17 @@ $('.timer_new60').click(() => {
 }) 
 
 $('#decrement').click(() => {
-    document.querySelector('.decrBtn').style.fontSize = '50px'
-    setTimeout(() => {document.querySelector('.decrBtn').style.fontSize = '40px'}, 100)
+    if(document.querySelector('.container').style.height > '50px'){
+        document.querySelector('.decrBtn').style.fontSize = '50px'
+        setTimeout(() => {document.querySelector('.decrBtn').setAttribute('style', '')}, 100)
+    }
 })
 
 $('#increment').click(() => {
-    document.querySelector('.incrBtn').style.fontSize = '50px'
-    setTimeout(() => {document.querySelector('.incrBtn').style.fontSize = '40px'}, 100)
+    if(document.querySelector('.container').style.height > '50px'){
+        document.querySelector('.incrBtn').style.fontSize = '50px'
+        setTimeout(() => {document.querySelector('.incrBtn').setAttribute('style', '')}, 100)
+    }
 })
 
 $resume.addEventListener('click', () => {
