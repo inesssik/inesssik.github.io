@@ -185,7 +185,7 @@ button{
   transform: translateY(2px);
 }
 
-.incrBtn::target-text:active{
+.incrBtn:active{
   transform: translateY(2px);
 }
 
@@ -845,5 +845,73 @@ input::-webkit-inner-spin-button{
 
   .role_item{
     font-size: 10px;
+  }
+}
+
+@media screen and (max-height: 650px){
+
+  .timer_panel{
+    width: 150px;
+    height: 200px;
+  }
+
+  .timer_panel_plusMinus{
+    width: 130px;
+    padding: 0 10px 10px 10px;
+  }
+
+  .timer_panel_plusMinus button{
+    font-size: 10px;
+  }
+
+  #timer_time{
+    margin: 10px 0 10px 0;
+    font-size: 40px;
+  }
+
+  .imgAnim{
+    width: 50px;
+    height: 50px;
+  }
+
+  .role_item{
+    font-size: 10px;
+  }
+
+  .addRoleButton{
+    width: 120px;
+    height: 35px;
+    font-size: 10px;
+  }
+
+  .input_header{
+    font-size: 15px;
+  }
+
+  .role_header{
+    font-size: 25px;
+  }
+  
+  .btns_header{
+    font-size: 20px;
+  }
+
+  .container{
+    height: 50px;
+    width: 150px;
+  }
+
+  #increment a{
+    height: 50px;
+    font-size: 25px;
+  }
+
+  #decrement a{
+    height: 50px;
+    font-size: 25px;
+  }
+
+  input[type="number"]{
+    font-size: 35px;
   }
 }
