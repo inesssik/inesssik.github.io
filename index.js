@@ -47,10 +47,11 @@ function addSheriff(){
 }
 
 function addCustomRole(){
-    if(roles.length < 13){
+    if(roles.length < 13 && roles.length <= document.querySelector("#countOfPlayers").value && document.querySelector('.customRoleInput').value != ''){
         roles.push(document.querySelector('.customRoleInput').value)
         $role_list.innerHTML += 
         `<p class="role_item" id=${$role_list.childElementCount}>${document.querySelector('.customRoleInput').value}</p>`
+        document.querySelector('.customRoleInput').value = ''
     }
 }
 
