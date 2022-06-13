@@ -13,35 +13,45 @@ let $minus30 = document.querySelector('.minus30')
 
 
 function addMaf(){
-    roles.push('Mafia')
-    $role_list.innerHTML += 
-    `<p class="role_item" id=${$role_list.childElementCount}>Mafia</p>`
+    console.log(roles.length)
+    if(roles.length < 13 && roles.length < document.querySelector("#countOfPlayers").value){
+        roles.push('Mafia')
+        $role_list.innerHTML += 
+        `<p class="role_item" id=${$role_list.childElementCount}>Mafia</p>`
+    }
 }
 
 function addDon(){
-    roles.push('Don')
-    $role_list.innerHTML += 
-    `<p class="role_item" id=${$role_list.childElementCount}>Don</p>`
-
+    if(roles.length < 13 && roles.length < document.querySelector("#countOfPlayers").value){
+        roles.push('Don')
+        $role_list.innerHTML += 
+        `<p class="role_item" id=${$role_list.childElementCount}>Don</p>`
+    }
 }
 
 function addDoc(){
-    roles.push("Doctor")
-    $role_list.innerHTML += 
-    `<p class="role_item" id=${$role_list.childElementCount}>Doctor</p>`
+    if(roles.length < 13 && roles.length < document.querySelector("#countOfPlayers").value){
+        roles.push("Doctor")
+        $role_list.innerHTML += 
+        `<p class="role_item" id=${$role_list.childElementCount}>Doctor</p>`
+    }
 }
 
 
 function addSheriff(){
-    roles.push("Sheriff")
-    $role_list.innerHTML += 
-    `<p class="role_item" id=${$role_list.childElementCount}>Sheriff</p>`
+    if(roles.length < 13 && roles.length < document.querySelector("#countOfPlayers").value){
+        roles.push("Sheriff")
+        $role_list.innerHTML += 
+        `<p class="role_item" id=${$role_list.childElementCount}>Sheriff</p>`
+    }
 }
 
 function addCustomRole(){
-    roles.push(document.querySelector('.customRoleInput').value)
-    $role_list.innerHTML += 
-    `<p class="role_item" id=${$role_list.childElementCount}>${document.querySelector('.customRoleInput').value}</p>`
+    if(roles.length < 13){
+        roles.push(document.querySelector('.customRoleInput').value)
+        $role_list.innerHTML += 
+        `<p class="role_item" id=${$role_list.childElementCount}>${document.querySelector('.customRoleInput').value}</p>`
+    }
 }
 
 function createArray(count){
