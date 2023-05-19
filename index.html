@@ -16,7 +16,7 @@
     <div class="functional">
 
         <div class="inputs">
-            <div class="input_header">COUNT OF PLAYERS</div>
+            <div class="input_header">КОЛИЧЕСТВО ИГРОКОВ</div>
             <div class="container">
                 <button id="decrement" onclick="stepper(this)"><a class="decrBtn"> - </a></button>
                 <input type="number" min="0" step="1" id="countOfPlayers">
@@ -32,11 +32,11 @@
                         <img class="imgAnim pauseToResume displayNone" src="pauseTimerImg/pauseToResume.gif">
                     </div>
                     <div class="timer_panel_new60">
-                        <button class="timer_new60 button-30">New</button>
+                        <button class="timer_new60 button-30">Новый</button>
                     </div>
                     <div class="timer_panel_plusMinus">
-                        <button class="minus30 button-30">-30s</button>
-                        <button class="plus30 button-30">+30s</button>
+                        <button class="minus30 button-30">-30с</button>
+                        <button class="plus30 button-30">+30с</button>
                     </div>
                 </div>
             </div>
@@ -45,42 +45,41 @@
         
 
         <div class="roles">
-            <div class="role_header">All roles</div>
+            <div class="role_header">ВСЕ РОЛИ</div>
             <div class="role_list"></div>
         </div>
         
         <div class="btns">
-            <div class="btns_header">ADD ROLES</div>
+            <div class="btns_header">ДОБАВИТЬ РОЛИ</div>
             <div class="addRoleBtns">
-                <button class="addRoleButton" id="addMafia" onclick="addMaf()">Add Mafia</button>
-                <button class="addRoleButton" id="addDon" onclick="addDon()">Add Don</button>
-                <button class="addRoleButton" id="addDoctor" onclick="addDoc()">Add Doctor</button>
-                <button class="addRoleButton" id="addSheriff" onclick="addSheriff()">Add Sheriff</button>
+                <button class="addRoleButton" id="addMafia" onclick="addRole('Mafia')">Мафия</button>
+                <button class="addRoleButton" id="addDon" onclick="addRole('Don')">Дон</button>
+                <button class="addRoleButton" id="addDoctor" onclick="addRole('Doctor')">Доктор</button>
+                <button class="addRoleButton" id="addSheriff" onclick="addRole('Sheriff')">Коммисар</button>
             </div>
             <span></span>
         </div>
-        
     </div>
 
     <div class="footer">
         <div class="reset footer_item">
-            <button class="button-29 reset_btn" onclick="resetRole()">RESET ROLES</button>
+            <button class="button-29 reset_btn" onclick="resetRole()">Сброс ролей</button>
         </div>
         <div class="result footer_item">
             <button class="button-82-pushable" id="viewResult">
                 <span class="button-82-shadow"></span>
                 <span class="button-82-edge"></span>
                 <span class="button-82-front text">
-                    Result
+                    Результат
                 </span>
             </button>
         </div>
         <div class="customRole footer_item">
             <div class="input-container">
                 <input class="customRoleInput" type="text" required=""/>
-                <label>Custom Role</label>		
+                <label>Кастомная роль</label>		
             </div>  
-            <button class="button-29 addCustomRoleBtn" onclick="addCustomRole()">ADD</button>
+            <button class="button-29 addCustomRoleBtn" onclick="addRole()">+</button>
         </div>
     </div>
 </body>

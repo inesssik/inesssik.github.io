@@ -11,37 +11,20 @@ let $timerStart = document.querySelector('.timer_start')
 let $plus30 = document.querySelector('.plus30')
 let $minus30 = document.querySelector('.minus30')
 
+function addRole(role = null){
+    if(role === null){
+        role = document.querySelector('.customRoleInput').value
+    }
 
-function addMaf(){
-    roles.push('Mafia')
+    role = role.split('')
+    let firstLetter = role[0].toUpperCase()
+    role.shift()
+    role.unshift(firstLetter);
+    role = role.join('')
+
+    roles.push(role)
     $role_list.innerHTML += 
-    `<p class="role_item" id=${$role_list.childElementCount}>Mafia</p>`
-}
-
-function addDon(){
-    roles.push('Don')
-    $role_list.innerHTML += 
-    `<p class="role_item" id=${$role_list.childElementCount}>Don</p>`
-
-}
-
-function addDoc(){
-    roles.push("Doctor")
-    $role_list.innerHTML += 
-    `<p class="role_item" id=${$role_list.childElementCount}>Doctor</p>`
-}
-
-
-function addSheriff(){
-    roles.push("Sheriff")
-    $role_list.innerHTML += 
-    `<p class="role_item" id=${$role_list.childElementCount}>Sheriff</p>`
-}
-
-function addCustomRole(){
-    roles.push(document.querySelector('.customRoleInput').value)
-    $role_list.innerHTML += 
-    `<p class="role_item" id=${$role_list.childElementCount}>${document.querySelector('.customRoleInput').value}</p>`
+    `<p class="role_item" id=${$role_list.childElementCount}>${role}</p>`
 }
 
 function createArray(count){
@@ -132,12 +115,7 @@ function stepper(btn){
     $role_list.innerHTML = ""
 }
 
-
-
-// Animation of Pause/Resume
-
 let $imgAnim = document.querySelector('.imgAnim')
-
 
 function imgAnim(needReverse) {
     $resume = document.querySelector('.timer_resume')
